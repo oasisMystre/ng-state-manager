@@ -4,7 +4,7 @@ export enum Status {
   resolved,
 }
 
-export const reducer = function <T extends Promise<any>>(promise: T) {
+export const reducer = function <T>(promise: Promise<T>) {
   const cases: Record<Status, Array<(payload: any) => void>> = {
     [Status.pending]: [],
     [Status.rejected]: [],
@@ -21,7 +21,7 @@ export const reducer = function <T extends Promise<any>>(promise: T) {
         action(null);
       }
 
-      promise
+      return promise
         .then((result) => {
           for (const action of cases[Status.resolved]) action(result);
 
