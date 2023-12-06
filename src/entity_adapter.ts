@@ -78,7 +78,7 @@ export class EntityAdapter<T> implements Patch<T> {
     }
   }
 
-  getInitialState<V>(defaultState: V) {
+  getInitialState<V>(defaultState?: V) {
     return {
       ...defaultState,
       ids: new Set<TEntityUniqueKey>(),
