@@ -1,0 +1,25 @@
+{
+  "name": "ng-state-adapter",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prod": "tsc && npm publish"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0"
+  }
+}
